@@ -1,0 +1,60 @@
+<html>
+<head>
+	<link rel="stylesheet" href="max.upload.css">
+	<style type="text/css"></style>
+	<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="jquery.iframe-transport.js"></script>
+	<script type="text/javascript" src="jquery.fileupload.js"></script>
+	<script type="text/javascript" src="max.upload.js"></script>
+	<script type="text/javascript">
+	var test = undefined
+	$(document).ready(function(){
+		test = new maxupload({
+				wrapper :'#upload1',
+		    url:'', //for upload temp if not support filereader html5
+		    height : 512,
+		    width : 512,
+		    photo:'upload-foto.png',
+		    ready:function(data){},
+		    complete:function(data){
+		    console.log(data)
+				/*$.ajax({
+			      type:'POST',
+			      url:'',
+			      dataType:'json',
+			      beforeSend:function(){
+			      	show_loading();
+			      },
+			      data:$.extend(img_data,{name:$('#name').val(), crop:{
+			        img:{
+			          x:parseFloat($(preview).css('left')),
+			          y:parseFloat($(preview).css('top')),
+			          w:parseFloat($(preview).css('width')),
+			          h:parseFloat($(preview).css('height'))
+			        },
+			        frame:{
+			          x:0,
+			          y:0,
+			          w:parseFloat($(holder).width()),
+			          h:parseFloat($(holder).height())
+			        }
+			      }}),
+			      success:function(r){
+			        if(r.status == 1 && r.url){
+			          window.location.href = r.url;
+			        }
+			      },
+			      complete:function(){
+			      	hide_loading();
+			      }
+			    })*/
+		    }
+		})
+	})
+	</script>
+</head>
+<body>
+<div id="upload1"></div>
+</body>
+</html>
